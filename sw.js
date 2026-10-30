@@ -1,4 +1,4 @@
-const CACHE = 'ridelift-v2-firebase-configured-1';
+const CACHE = 'ridelift-v3-bodyfat-1';
 const ASSETS = ['./', './index.html', './styles.css', './app.js', './firebase-sync.js', './firebase-config.js', './icon.svg', './manifest.webmanifest'];
 self.addEventListener('install', event => { event.waitUntil(caches.open(CACHE).then(cache => cache.addAll(ASSETS))); self.skipWaiting(); });
 self.addEventListener('activate', event => { event.waitUntil(caches.keys().then(keys => Promise.all(keys.filter(k => k.startsWith('ridelift-') && k !== CACHE).map(k => caches.delete(k))))); self.clients.claim(); });
